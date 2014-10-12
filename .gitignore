@@ -1,3 +1,6 @@
+# Script Runner. Possibly contains API settings such as access token.
+*.bat
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
