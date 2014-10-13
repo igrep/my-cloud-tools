@@ -1,6 +1,9 @@
 # Script Runner. Possibly contains API settings such as access token.
 *.bat
 
+# write sample response
+*.json
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
