@@ -1,6 +1,8 @@
 # Script Runner. Possibly contains API settings such as access token.
 *.bat
 
+Vagrantfile
+
 # write sample response
 *.json
 
