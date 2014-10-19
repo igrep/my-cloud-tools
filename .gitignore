@@ -2,6 +2,7 @@
 *.bat
 
 Vagrantfile
+shared_config.yml
 
 # write sample response
 *.json

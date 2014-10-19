@@ -1,11 +1,15 @@
 # vim: filetype=ruby :
 
+require 'yaml'
+
+shared_config = YAML.load_file("#{File.dirname(__FILE__)}/shared_config.yml")
+
 Vagrant.configure("2") do |config|
   config.vm.box = "dummy"
 
   config.vm.provider :aws do |aws, override|
-    aws.access_key_id = "YOUR KEY"
-    aws.secret_access_key = "YOUR SECRET KEY"
+    aws.access_key_id = shared_config['access_key_id']
+    aws.secret_access_key = shared_config['secret_access_key']
     aws.keypair_name = "KEYPAIR NAME"
 
     aws.security_groups = "<YOUR_SECURITYGRUOP_ID>"
