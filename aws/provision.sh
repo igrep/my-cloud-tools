@@ -18,6 +18,18 @@ Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/\$repo/os/\$arch
 Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/\$repo/os/\$arch
 END
 
+# TODO: setup non-root user with password and PermitRootLogin no
+cat <<'COMMENT_OUT'
+useradd -m -g users -G wheel -s /bin/bash $user_name
+cat <<END >> /etc/ssh/sshd_config
+# http://www.maruko2.com/mw/ssh_%E6%8E%A5%E7%B6%9A%E3%82%92%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B
+ClientAliveInterval 15
+
+PermitRootLogin no
+Port $ssh_port
+END
+COMMENT_OUT
+
 pacman -Syu --noconfirm
 pacman -R --noconfirm vim # avoid conflict
 pacman -S --noconfirm \
