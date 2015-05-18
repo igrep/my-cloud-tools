@@ -19,6 +19,7 @@ task :start do
 end
 
 task login: :start do
+  sh "ttpmacro.exe login.ttl #{user_name} #{ec2_instance.public_ip_address}:#{ssh_port} #{key_file}"
 end
 
 task push: :start do
