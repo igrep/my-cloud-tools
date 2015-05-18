@@ -3,10 +3,14 @@ require 'yaml'
 
 shared_config = YAML.load_file("#{File.dirname(__FILE__)}/shared_config.yml")
 
+user_name = shared_config.fetch('user_name')
+ssh_port = shared_config.fetch('ssh_port')
+key_file = shared_config.fetch('key_file')
+
 ec2_instance = AWS::EC2.new(
-  access_key_id: shared_config['access_key_id'],
-  secret_access_key: shared_config['secret_access_key'],
-).instances[shared_config['launched_instance_id']]
+  access_key_id: shared_config.fetch('access_key_id'),
+  secret_access_key: shared_config.fetch('secret_access_key'),
+).instances[shared_config.fetch('launched_instance_id')]
 
 task default: :login
 

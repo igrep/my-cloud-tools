@@ -1,3 +1,5 @@
 launched_instance_id: <vagrant_up_ed_instance_id>
 access_key_id: <your_aws_access_key_id>
 secret_access_key: <your_aws_secret_access_key>
+user_name: <non_root_user_name_to_login>
+ssh_port: 22
