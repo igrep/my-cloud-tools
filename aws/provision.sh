@@ -44,6 +44,7 @@ locale-gen
 echo LANG=ja_JP.UTF-8 > /etc/locale.conf
 export LANG=ja_JP.UTF-8
 
+## setup mirror for Japan
 cat <<END > /etc/pacman.d/mirrorlist
 ## Score: 1.6, Japan
 Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/\$repo/os/\$arch
@@ -65,8 +66,8 @@ ClientAliveInterval 15
 PermitRootLogin no
 Port $ssh_port
 END
-COMMENT_OUT
 
+# packages I use everyday.
 pacman -Syu --noconfirm
 pacman -R --noconfirm vim # avoid conflict
 pacman -S --noconfirm \
