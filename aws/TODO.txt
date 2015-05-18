@@ -1,0 +1,6 @@
+setup firewall and other security settings: use Chef?
+  deploy the configuration files then restart.
+    - /etc/iptables/iptables.rules
+    - /etc/ssh/sshd_config
+login with teraterm macro
+sync by winscp.
