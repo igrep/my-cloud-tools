@@ -35,7 +35,7 @@ fi
 # Localization: locale and time zone.
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 hwclock --systohc --utc
-apt-get install task-japanese
+apt-get -y install task-japanese
 cat <<END > /etc/locale.gen
 en_US.UTF-8 UTF-8
 ja_JP.UTF-8 UTF-8
