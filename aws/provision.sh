@@ -73,11 +73,38 @@ ClientAliveInterval 15
 #Port $ssh_port
 END
 
+# TODO: Put ssh pubkey
+
 # packages I use everyday.
 apt-get update
 apt-get -y upgrade
-apt-get -y install
+apt-get -y install \
   vim \
   git \
   tmux \
-  silversearcher-ag
+  silversearcher-ag \
+  libgmp-dev # Dependency of ghc
+
+# dot-files
+# TODO:
+#   - clone as a non-root user.
+#   - how to specify my private key.
+# git clone ssh://igrep@git.codebreak.com/igrep/dot-files.git ~/dot-files/
+# cd ~/dot-files/
+# ./install.sh sh
+
+# setup haskell
+mkdir ghc
+cd ghc
+wget -qO - https://www.haskell.org/ghc/dist/7.8.4/ghc-7.8.4-x86_64-unknown-linux-deb7.tar.xz | tar Jxvf -
+./configure --prefix=/opt/ghc/
+make install
+cd -
+
+mkdir cabal
+cd cabal
+wget -qO - http://hackage.haskell.org/package/cabal-install-1.22.4.0/cabal-install-1.22.4.0.tar.gz | tar zxvf -
+sh ./bootstrap.sh
+cd -
+
+# TODO: install and setup Dropbox
