@@ -64,13 +64,13 @@ echo 'Defaults env_keep += "HOME"' >> /etc/sudoers
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 echo $user_name:$password | chpassword
 
-# setup ssh only for non-root user
 cat <<END >> /etc/ssh/sshd_config
 # http://www.maruko2.com/mw/ssh_%E6%8E%A5%E7%B6%9A%E3%82%92%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B
 ClientAliveInterval 15
 
-PermitRootLogin no
-Port $ssh_port
+# setup ssh only for non-root user
+#PermitRootLogin no
+#Port $ssh_port
 END
 
 # packages I use everyday.
