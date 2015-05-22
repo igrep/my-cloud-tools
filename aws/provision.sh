@@ -45,12 +45,18 @@ echo LANG=ja_JP.UTF-8 > /etc/locale.conf
 export LANG=ja_JP.UTF-8
 
 ## setup mirror for Japan
-cat <<END > /etc/pacman.d/mirrorlist
-## Score: 1.6, Japan
-Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/\$repo/os/\$arch
-## Score: 1.8, Japan
-Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/\$repo/os/\$arch
-END
+#        Temporarily comment out in the U.S.
+#cat <<END > /etc/apt/sources.list
+#deb http://ftp.jp.debian.org/debian/ jessie main non-free contrib
+#deb-src http://ftp.jp.debian.org/debian/ jessie main non-free contrib
+#deb http://ftp.jp.debian.org/debian/ jessie-updates main non-free contrib
+#deb-src http://ftp.jp.debian.org/debian/ jessie-updates main non-free contrib
+#deb http://security.debian.org/ jessie/updates main non-free contrib
+#deb-src http://security.debian.org/ jessie/updates main non-free contrib
+
+#deb http://ftp.jp.debian.org/debian jessie-backports main contrib non-free
+#deb-src http://ftp.jp.debian.org/debian jessie-backports main contrib non-free
+#END
 
 # setup non-root user
 useradd -m -g wheel -s /bin/bash $user_name

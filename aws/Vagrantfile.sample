@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
     aws.security_groups = "<YOUR_SECURITYGRUOP_ID>"
 
-    aws.ami = "<YOUR_ARCH_LINUX_AMI>"
+    aws.ami = "<YOUR_LINUX_AMI>"
 
     aws.instance_type = 'c3.xlarge'
     aws.region = 'ap-northeast-1'
