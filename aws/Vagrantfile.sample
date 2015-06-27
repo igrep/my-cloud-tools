@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
       :shell,
       path: 'provision.sh',
       args: (
-        "--user-name #{shared_config.fetch 'username'}" \
+        "--user-name #{shared_config.fetch 'user_name'}" \
         "--password #{password}" \
         "--ssh-port #{shared_config.fetch 'ssh_port'}"
       ),
