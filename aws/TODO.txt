@@ -2,5 +2,8 @@ rewrite provision.sh with itamae
 setup firewall and other security settings
   deploy the configuration files then restart.
     - /etc/iptables/iptables.rules
+      - https://github.com/namusyaka/itamae-plugin-resource-iptables
     - /etc/ssh/sshd_config
+      - https://rubygems.org/gems/itamae-plugin-resource-ssh_key
+      - https://github.com/namusyaka/itamae-plugin-recipe-openssh
 install Vim, Haskell, Dropbox, Hakyll, so on.
