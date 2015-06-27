@@ -1,0 +1,40 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ansi (1.5.0)
+    aws-sdk (2.0.45)
+      aws-sdk-resources (= 2.0.45)
+    aws-sdk-core (2.0.45)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+    aws-sdk-resources (2.0.45)
+      aws-sdk-core (= 2.0.45)
+    builder (3.2.2)
+    hashie (3.4.1)
+    itamae (1.2.17)
+      ansi
+      hashie
+      schash (~> 0.1.0)
+      specinfra (>= 2.31.0, < 3.0.0)
+      thor
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
+    multi_json (1.11.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.2)
+    rake (10.4.2)
+    schash (0.1.1)
+    specinfra (2.34.1)
+      net-scp
+      net-ssh
+    thor (0.19.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws-sdk
+  itamae
+  rake
