@@ -1,1 +1,0 @@
-connect 'myserver /ssh /2 /auth=publickey /user=user_name /ask4passwd /keyfile=private-key-file'
