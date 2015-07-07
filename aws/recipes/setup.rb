@@ -1,11 +1,3 @@
-execute 'package upgrade' do
-  user 'root'
-  command <<-END
-  apt-get -y update && \
-  apt-get -y upgrade
-  END
-end
-
 [
   'task-japanese',
   'vim',
