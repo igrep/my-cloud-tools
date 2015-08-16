@@ -14,24 +14,6 @@
   package(package_name) { action :install }
 end
 
-directory '/opt/tmp/' do
-  action :create
-  user 'root'
-end
-
-# Setup Haskell
-execute 'install stack' do
-  not_if 'stack --version'
-
-  command <<-END
-  wget -qO - https://github.com/commercialhaskell/stack/releases/download/v#{node[:stack_version]}/stack-#{node[:stack_version]}-x86_64-linux.gz \
-    | gunzip --stdout > /usr/local/bin/stack && \
-  chmod 0755 /usr/local/bin/stack
-  END
-end
-
-#end
-
 # Setup dot-files
 
 ## ssh key installation
