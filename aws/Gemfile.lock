@@ -38,3 +38,6 @@ DEPENDENCIES
   aws-sdk
   itamae
   rake
+
+BUNDLED WITH
+   1.10.3
